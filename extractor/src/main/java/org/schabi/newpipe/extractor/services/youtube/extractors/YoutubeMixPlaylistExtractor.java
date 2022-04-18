@@ -37,7 +37,7 @@ import org.schabi.newpipe.extractor.utils.JsonUtils;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -86,7 +86,7 @@ public class YoutubeMixPlaylistExtractor extends PlaylistExtractor {
             jsonBody.value("playlistIndex", Integer.parseInt(playlistIndexString));
         }
 
-        final byte[] body = JsonWriter.string(jsonBody.done()).getBytes(StandardCharsets.UTF_8);
+        final byte[] body = JsonWriter.string(jsonBody.done()).getBytes("UTF-8");
 
         final Map<String, List<String>> headers = new HashMap<>();
         addClientInfoHeaders(headers);
@@ -195,7 +195,7 @@ public class YoutubeMixPlaylistExtractor extends PlaylistExtractor {
                 .value("playlistIndex", index)
                 .value("params", params)
                 .done())
-                .getBytes(StandardCharsets.UTF_8);
+                .getBytes("UTF-8");
 
         return new Page(YOUTUBEI_V1_URL + "next?key=" + getKey(), null, null, cookies, body);
     }

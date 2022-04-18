@@ -25,7 +25,7 @@ import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeMixPlayli
 import org.schabi.newpipe.extractor.stream.StreamInfoItem;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -88,7 +88,7 @@ public class YoutubeMixPlaylistExtractorTest {
                     .value("playlistId", "RD" + VIDEO_ID)
                     .value("params", "OAE%3D")
                     .done())
-                    .getBytes(StandardCharsets.UTF_8);
+                    .getBytes("UTF-8");
 
             final InfoItemsPage<StreamInfoItem> streams = extractor.getPage(new Page(
                     YOUTUBEI_V1_URL + "next?key=" + getKey() + DISABLE_PRETTY_PRINT_PARAMETER,
@@ -179,7 +179,7 @@ public class YoutubeMixPlaylistExtractorTest {
                     .value("playlistIndex", INDEX)
                     .value("params", "OAE%3D")
                     .done())
-                    .getBytes(StandardCharsets.UTF_8);
+                    .getBytes("UTF-8");
 
             final InfoItemsPage<StreamInfoItem> streams = extractor.getPage(new Page(
                     YOUTUBEI_V1_URL + "next?key=" + getKey() + DISABLE_PRETTY_PRINT_PARAMETER,
@@ -267,7 +267,7 @@ public class YoutubeMixPlaylistExtractorTest {
                     .value("playlistId", "RDMM" + VIDEO_ID)
                     .value("params", "OAE%3D")
                     .done())
-                    .getBytes(StandardCharsets.UTF_8);
+                    .getBytes("UTF-8");
 
             final InfoItemsPage<StreamInfoItem> streams = extractor.getPage(new Page(
                     YOUTUBEI_V1_URL + "next?key=" + getKey() + DISABLE_PRETTY_PRINT_PARAMETER,
@@ -387,7 +387,7 @@ public class YoutubeMixPlaylistExtractorTest {
                     .value("playlistId", "RDCM" + CHANNEL_ID)
                     .value("params", "OAE%3D")
                     .done())
-                    .getBytes(StandardCharsets.UTF_8);
+                    .getBytes("UTF-8");
 
             final InfoItemsPage<StreamInfoItem> streams = extractor.getPage(new Page(
                     YOUTUBEI_V1_URL + "next?key=" + getKey() + DISABLE_PRETTY_PRINT_PARAMETER,
@@ -455,7 +455,7 @@ public class YoutubeMixPlaylistExtractorTest {
                     .value("playlistId", "RD" + VIDEO_ID)
                     .value("params", "OAE%3D")
                     .done())
-                    .getBytes(StandardCharsets.UTF_8);
+                    .getBytes("UTF-8");
 
             final InfoItemsPage<StreamInfoItem> streams = extractor.getPage(new Page(
                     YOUTUBEI_V1_URL + "next?key=" + getKey(), null, null, dummyCookie, body));

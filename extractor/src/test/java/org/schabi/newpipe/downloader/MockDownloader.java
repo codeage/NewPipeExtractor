@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +34,7 @@ class MockDownloader extends Downloader {
             for (final File file : files) {
                 if (file.getName().startsWith(RecordingDownloader.FILE_NAME_PREFIX)) {
                     final InputStreamReader reader = new InputStreamReader(new FileInputStream(
-                            file), StandardCharsets.UTF_8);
+                            file), "UTF-8");
                     final TestRequestResponse response = new GsonBuilder()
                             .create()
                             .fromJson(reader, TestRequestResponse.class);
